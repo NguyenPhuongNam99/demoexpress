@@ -1,0 +1,17 @@
+<div class="mt-4">
+    <form method= 'GET' action="/news">
+    {{!--  method cos thể đổi thành phương thức POST nhưng phải định nghĩa ở bên index js app.post <div class="
+        action : là chuyển sang màn new xảy ra khi đây là screen Search
+        khi submit form thì nhận được param ==>chuyển sang màn hình new và màn hình new có 
+        param của màn hình search
+    "></div> --}}
+        <div>
+            <label for="search-input">Search</label>
+            <input type="text" name='var' class="fullname" id="fullname" placeholder="Nhap fullname">
+
+            <input type="text" name='q' class="form-control" id="search-input" placeholder="Nhap earch">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
