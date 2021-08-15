@@ -22,6 +22,11 @@ app.set('views', path.join(__dirname, 'resource/views'));
 //C:\Users\namn3\blogExpress\src
 
 // app.engine('handlebars', exphbs());
+//midlware
+//midlaware xu ly tu html 
+app.use(express.urlencoded({extended:true}));
+//midlware xu ly voi js laf XML,aixos, fetch 
+app.use(express.json());
 
 const port = 3000;
 app.get("/news", (req, res) => {
@@ -34,8 +39,12 @@ app.get('/search',(req,res) =>{
   return res.render('search');
 })
 
+// app.post('/search',(req,res)=>{
+//   return res.render('search');
+// })
 app.post('/search',(req,res)=>{
-  return res.render('search');
+  console.log('body', req.body);
+  return res.send('');
 })
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
