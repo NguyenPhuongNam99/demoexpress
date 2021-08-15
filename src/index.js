@@ -3,7 +3,7 @@ const morgan = require("morgan")
 const path = require('path');
 // const exphbss = require('express-handlebars');
 const handlebars  = require('express-handlebars');
-
+const routers = require('./routers');
 const app = express();
 
 //HTTP logger -log xem server cos chajy hay ko , xem trinh duyet gui request
@@ -29,23 +29,31 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 const port = 3000;
-app.get("/news", (req, res) => {
+routers(app);
+// app.get("/news", (req, res) => {
 
-  return res.render('news')
-});
+//   return res.render('news')
+// });
 
-app.get('/search',(req,res) =>{
-  console.log("res",req.query);
-  return res.render('search');
-})
-
-// app.post('/search',(req,res)=>{
+// app.get('/search',(req,res) =>{
+//   console.log("res",req.query);
 //   return res.render('search');
 // })
-app.post('/search',(req,res)=>{
-  console.log('body', req.body);
-  return res.send('');
-})
+
+// // app.post('/search',(req,res)=>{
+// //   return res.render('search');
+// // })
+// app.post('/search',(req,res)=>{
+//   console.log('body', req.body);
+//   return res.send('');
+// })
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
 );
+
+//công dụng của MVC
+//chia router(công dụng của router là nhận param router rồi kết hợp với controler ==> render ra view)
+//chia view
+//chia controler ( công dụng của controler là render ra view)
+// project lớn dê bảo trì hơn
+//code ngắn hơn
