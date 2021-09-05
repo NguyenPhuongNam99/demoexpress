@@ -5,7 +5,8 @@ const path = require('path');
 const handlebars  = require('express-handlebars');
 const routers = require('./routers');
 const app = express();
-
+const db = require('./config/db');
+db.connect();
 //HTTP logger -log xem server cos chajy hay ko , xem trinh duyet gui request
 // app.use(morgan('combined'))
 //load anh 

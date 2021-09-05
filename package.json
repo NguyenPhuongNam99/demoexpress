@@ -24,7 +24,8 @@
   "homepage": "https://github.com/NguyenPhuongNam99/demoexpress#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "mongoose": "^5.13.7"
   },
   "devDependencies": {
     "husky": "^7.0.1",
